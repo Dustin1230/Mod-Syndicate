@@ -1,0 +1,12 @@
+		===================================================
+		==         A FEW GOOD MEN INSTALLATION           ==
+		===================================================
+
+A Few Good Men requires you to have previously downloaded the Long War mod in order to be installed.
+This mod is compatible for install with PatcherGUI
+
+NEW INSTALLATION STEPS
+
+1) Copy "AFewGoodMen".txt into your Mods folder and select & install it using PatcherGUI
+
+THAT'S IT!!

@@ -1,0 +1,44 @@
+===================================================
+==        PROJECT CERBERUS INSTALLATION          ==
+===================================================
+
+Project Cerberus requires you to have previously downloaded the Long War mod in order to be installed.
+This mod is compatible for install with PatcherGUI
+
+Project Cerberus requires a clean install of XCom The Long War Mod.  Due to the massive amount
+of .ini, .int, and code changes this mod may not be compatible with other mods.
+
+If there are mods that you really enjoy and would like to know if they are compatible with Project
+Cerberus you can contact me via nexusmods.com via private message.
+
+NEW INSTALLATION STEPS
+
+1. Copy Cerberus.txt into your Mods folder and select & install it with your
+   other mods using PatcherGUI
+
+2. Copy AlternateTechTree.u into your XEW\XComGame\CookedPCConsole folder.  
+   e.g. C:\Program Files (x86)\Steam\SteamApps\Common\XCom-Enemy-Unknown\XEW\XComGame\CookedPCConsole
+   
+   *IMPORTANT: Don't forget the "XEW", otherwise you're installing it into 
+   the EU folder and this won't work!*
+
+4. Edit XEW\XComGame\Config\DefaultMutatorLoader.ini and add the following lines to the
+   bottom of the file:
+
+        arrStrategicMutators="AlternateTechTree.AltTechTreeMutate"
+	arrStrategicMutators="AlternateTechTree.AltTechTree"
+	arrStrategicMutators="AlternateTechTree.AltItemTree"
+	NOTE: I have included DefaultMutatorLoader.ini in the install file in case you're curious
+		how it needs to look.
+
+5. Copy XComGame.int** & XComStrategyGame.int into XEW\XComGame\Localization\INT folder.  Once again 
+   'Localization' should be a sibling folder to the CookedPCConsole folder.
+
+** There are 2 new 2nd Wave options included in this file, both are required in order to participate in
+   all parts of this mod.  They need to be in the correct order and are as follows:
+
+	m_arrGameplayToggleTitle[30]="Alternate Tech Tree (#30)"
+	m_arrGameplayToggleDesc[30]="Alternate Tech Tree reworks several key systems inside Xcom.  Research will become directional, if you choose a specific path other research options become unavailable.  Also many additional foundry projects become available and progression becomes more reliant on them."
+
+	m_arrGameplayToggleTitle[31]="A Few Good Men (#31)"
+	m_arrGameplayToggleDesc[31]="Instead of 6 soldiers you start with 5, also purchasing soldiers will now cost 100 and award you with a Specialist instead of a Rookie.  Last you will start with 60 soldiers instead of the set amount in DGC.ini.  WARNING USING THIS OPTION NEGATES YOUR CHANGES TO NUM_STARTING_SOLDIERS AND SOLDIER_COST!"

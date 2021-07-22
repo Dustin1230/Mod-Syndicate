@@ -1,0 +1,72 @@
+// Adds more variety to the weapons, items, and armor that blueshirts bring into Base Defense
+UPK_FILE=XComStrategyGame.upk
+OBJECT = XGFacility_Barracks.CreateSoldier : AUTO
+[REPLACEMENT_CODE]
+49 [@] ( 28 15 ) 
+0F 00 <.kSoldier> 1C <Engine.Actor.Spawn> 20 <Class.XGStrategySoldier> 4A 4A 4A 4A 4A 4A 4A 16 
+0F 19 00 <.kSoldier> [@] <XGStrategySoldier.m_kSoldier> 00 ( 01 <XGStrategySoldier.m_kSoldier> ) 19 01 <@m_kCharGen> [@] <XComGame.XGCharacterGenerator.CreateTSoldier.ReturnValue> 00 ( 1B <CreateTSoldier> 4A 00 <.iCountry> 4A 4A 16 ) 
+14 2D 35 <XComGame.XGTacticalGameCoreNativeBase.TSoldier.bBlueshirt> <XComGame.XGTacticalGameCoreNativeBase.TSoldier> 00 01 19 00 <.kSoldier> [@] <XGStrategySoldier.m_kSoldier> 00 ( 01 <XGStrategySoldier.m_kSoldier> ) 2D 00 <.bBlueshirt> 
+0F 19 00 <.kSoldier> [@] <XGStrategySoldier.m_kChar> 00 ( 01 <XGStrategySoldier.m_kChar> ) 19 1B <TACTICAL> 16 [@] <XComGame.XGTacticalGameCoreNativeBase.GetTCharacter.ReturnValue> 00 ( 1B <GetTCharacter> 2C 02 16 ) 
+1B <RandomizeStats> 00 <.kSoldier> 16 
+19 1B <STORAGE> 16 [@] <NullRef> 00 ( 1B <AutoEquip> 00 <.kSoldier> 16 ) 
+07 [@label_0x01DC] 2D 00 <.bBlueshirt> 
+// Begin Changes
+/*Medkit*/	19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipSmallItem.ReturnValue> 00 ( 1B <EquipSmallItem> 00 <.kSoldier> 2C 45 2C 01 16 )
+/*Flashbang*/	19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipSmallItem.ReturnValue> 00 ( 1B <EquipSmallItem> 00 <.kSoldier> 2C 53 2C 02 16 )
+	07 [@label_0x018C] 19 1B <ENGINEERING> 16 [@] <XGFacility_Engineering.IsFoundryTechResearched.ReturnValue> 00 ( 1B <IsFoundryTechResearched> 2C 2A 16 ) 
+/*Pulse*/		07 [@label_1a] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C FC 16 ) 25 16
+/*Carbine*/			19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipLargeItem.ReturnValue> 00 ( 1B <EquipLargeItem> 00 <.kSoldier> 2C FC 2C 00 16 ) 
+		06 [@label_0x018C]
+		[#label_1a]
+/*Pulse*/			07 [@label_1b] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C 09 16 ) 25 16
+/*Rifle*/				19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipLargeItem.ReturnValue> 00 ( 1B <EquipLargeItem> 00 <.kSoldier> 2C 09 2C 00 16 ) 
+			06 [@label_0x018C]
+			[#label_1b]
+/*Gauss*/		07 [@label_2a] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C 35 16 ) 25 16
+/*Carbine*/			19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipLargeItem.ReturnValue> 00 ( 1B <EquipLargeItem> 00 <.kSoldier> 2C 35 2C 00 16 ) 
+		06 [@label_0x018C]
+		[#label_2a]
+/*Gauss*/			07 [@label_2b] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C 03 16 ) 25 16
+/*Rifle*/				19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipLargeItem.ReturnValue> 00 ( 1B <EquipLargeItem> 00 <.kSoldier> 2C 03 2C 00 16 ) 
+			06 [@label_0x018C]
+			[#label_2b]
+/*Beam*/		07 [@label_3a] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C FB 16 ) 25 16
+/*Carbine*/				19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipLargeItem.ReturnValue> 00 ( 1B <EquipLargeItem> 00 <.kSoldier> 2C FB 2C 00 16 ) 
+			06 [@label_0x018C]
+		[#label_3a]	
+/*Beam*/			07 [@label_3b] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C D7 16 ) 25 16
+/*Rifle*/				19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipLargeItem.ReturnValue> 00 ( 1B <EquipLargeItem> 00 <.kSoldier> 2C D7 2C 00 16 )
+			[#label_3b] 
+	[#label_0x018C]
+	07 [@label_0x01DC] 19 1B <ENGINEERING> 16 [@] <XGFacility_Engineering.IsFoundryTechResearched.ReturnValue> 00 ( 1B <IsFoundryTechResearched> 2C 2B 16 ) 
+		07 [@label_4a] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C A0 16 ) 25 16
+/*Aegis*/			19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipArmor.ReturnValue> 00 ( 1B <EquipArmor> 00 <.kSoldier> 2C A0 16 ) 
+		06 [@label_0x01DC]
+		[#label_4a]
+		07 [@label_4b] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C 3C 16 ) 25 16
+/*Carapace*/			19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipArmor.ReturnValue> 00 ( 1B <EquipArmor> 00 <.kSoldier> 2C 3C 16 ) 
+		06 [@label_0x01DC]
+		[#label_4b]
+		07 [@label_4c] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C 3A 16 ) 25 16
+/*Banshee*/			19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipArmor.ReturnValue> 00 ( 1B <EquipArmor> 00 <.kSoldier> 2C 3A 16 ) 
+		06 [@label_0x01DC]
+		[#label_4c]
+		07 [@label_0x01DC] 97 19 1B <STORAGE> 16 [@] <XGStorage.GetNumItemsAvailable.ReturnValue> 00 ( 1B <GetNumItemsAvailable> 2C 9F 16 ) 25 16
+/*Phalanx*/			19 1B <LOCKERS> 16 [@] <XGFacility_Lockers.EquipArmor.ReturnValue> 00 ( 1B <EquipArmor> 00 <.kSoldier> 2C 9F 16 ) 
+	[#label_0x01DC]
+	07 [@label_0xENG1] 19 1B <ENGINEERING> 16 [@] <XGFacility_Engineering.IsFoundryTechResearched.ReturnValue> 00 ( 1B <IsFoundryTechResearched> 2C 3A 16 ) 
+		A1 1A 2C 01 35 <XComGame.XGTacticalGameCoreNativeBase.TCharacter.aStats> <XComGame.XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGStrategySoldier.m_kChar> 00 ( 01 <XGStrategySoldier.m_kChar> ) 2C 05 16
+		A1 1A 2C 03 35 <XComGame.XGTacticalGameCoreNativeBase.TCharacter.aStats> <XComGame.XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGStrategySoldier.m_kChar> 00 ( 01 <XGStrategySoldier.m_kChar> ) 2C 01 16
+	[#label_0xENG1]
+// End Changes
+0F 00 <.I> 25 
+[#label_0x01E7]
+07 [@label_0x0235] 96 00 <.I> 00 <.iSoldierLevel> 16 
+	19 00 <.kSoldier> [@] <NullRef> 00 ( 1B <LevelUp> 00 <.eClass> 4A 16 ) 
+	A5 00 <.I> 16 
+	06 [@label_0x01E7] 
+[#label_0x0235]
+1B <AddNewSoldier> 00 <.kSoldier> 4A 2D 00 <.bBlueshirt> 16 
+04 00 <.kSoldier> 
+04 3A <.ReturnValue> 
+53 

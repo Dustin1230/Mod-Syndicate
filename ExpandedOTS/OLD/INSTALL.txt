@@ -1,0 +1,35 @@
+		=====================================================
+		==  Expanded Officer Training School INSTALLATION  ==
+		=====================================================
+
+Expanded Officer Training School requires you to have previously downloaded the Long War mod 
+in order to be installed.  This mod is compatible for install with PatcherGUI.
+
+NEW INSTALLATION STEPS
+
+1) Copy "ExpandedOTS".txt into your Mods folder and select & install it using PatcherGUI
+
+2) Do a search(ctrl + f) in DefaultGameCore.ini for "OTSBalance" then copy/paste the following
+	; Alternate Tech Tree Additions
+	OTSBalance=(eTech=8,					iCash=125,	eRank=40)	; Extended Bootcamp
+	OTSBalance=(eTech=9,					iCash=200,	eRank=70)	; Specialist Training
+	OTSBalance=(eTech=10,					iCash=325,	eRank=110)	; Improved Training Facilities
+	OTSBalance=(eTech=11,					iCash=500,	eRank=160)	; Best of the Best
+Path to DefaultGameCore.ini: Steam>SteamApps>common>XCom-Enemy-Uknown>XEW>XComGame>Config
+
+
+3) Do a search(ctrl + f) in XComStrategyGame.int for "OTSTechNames" then copy/paste the following
+	; Expanded OTS Changes
+	OTSTechNames[8]="Extended Bootcamp"
+	OTSTechNames[9]="Specialist Training"
+	OTSTechNames[10]="Improved Training Facilities"
+	OTSTechNames[11]="Best of the Best"
+   Do a search(ctrl + f) in XComStrategyGame.int for "OTSTechSummary" then copy/paste the following
+	; Expanded OTS Changes
+	OTSTechSummary[8]="Soldiers recruited to XCom will receive better training before arrival leading to an increase in rank, new recruits will be ranked Specialist."
+	OTSTechSummary[9]="As the battle with the aliens rages on more and more civilians are receiving combat training, new recruits will be ranked as Lance Corporals."
+	OTSTechSummary[10]="Thanks to our support external combat units have managed to find and maintain more secure training facilities to get more people into the fight, new recruits ranked Corporals."
+	OTSTechSummary[11]="With more combat ready units outside of XCom The Council has been able to convince external combat units to send us their best soldiers available."
+Path to XComStrategyGame.int: Steam>SteamApps>common>XCom-Enemy-Uknown>XEW>XComGame>Localization>INT
+
+THAT'S IT!!
